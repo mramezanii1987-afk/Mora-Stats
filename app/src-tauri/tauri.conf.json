@@ -27,17 +27,16 @@
     "active": true,
     "targets": ["nsis", "msi", "dmg"],
     "publisher": "MoRa Stats",
-    "copyright": "",
     "category": "Education",
     "shortDescription": "Statistics that tell you what your result means",
     "longDescription": "A statistics application for researchers and students. It runs the analysis, writes the APA sentence, and explains in plain words what the result does and does not support. All computation happens on this machine.",
     "externalBin": ["binaries/mora-engine"],
     "resources": ["../sample/*"],
     "icon": [
-      "icons/32x32.png",
-      "icons/128x128.png",
-      "icons/icon.icns",
-      "icons/icon.ico"
+      "icons/icons/32x32.png",
+      "icons/icons/128x128.png",
+      "icons/icons/icon.icns",
+      "icons/icons/icon.ico"
     ],
     "windows": {
       "nsis": {
