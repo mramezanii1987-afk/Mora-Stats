@@ -1,0 +1,73 @@
+name: Build installers
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            triple: x86_64-pc-windows-msvc
+          - os: macos-14
+            triple: aarch64-apple-darwin
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Test the engine before packaging anything
+        working-directory: engine
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]" pyinstaller
+          pytest -q
+
+      - name: Freeze the engine into a single binary
+        working-directory: engine
+        run: pyinstaller packaging/mora-engine.spec --distpath dist --workpath build --noconfirm
+
+      - name: Name the sidecar the way Tauri expects
+        shell: bash
+        run: |
+          mkdir -p app/src-tauri/binaries
+          if [ "${{ matrix.os }}" = "windows-latest" ]; then
+            cp engine/dist/mora-engine.exe "app/src-tauri/binaries/mora-engine-${{ matrix.triple }}.exe"
+          else
+            cp engine/dist/mora-engine "app/src-tauri/binaries/mora-engine-${{ matrix.triple }}"
+            chmod +x "app/src-tauri/binaries/mora-engine-${{ matrix.triple }}"
+          fi
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.triple }}
+
+      - name: Install frontend dependencies
+        working-directory: app
+        run: npm install
+
+      - name: Build the application
+        working-directory: app
+        run: npx --yes @tauri-apps/cli@^2 build --target ${{ matrix.triple }}
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mora-stats-${{ matrix.triple }}
+          if-no-files-found: error
+          path: |
+            app/src-tauri/target/${{ matrix.triple }}/release/bundle/nsis/*.exe
+            app/src-tauri/target/${{ matrix.triple }}/release/bundle/msi/*.msi
+            app/src-tauri/target/${{ matrix.triple }}/release/bundle/dmg/*.dmg
