@@ -1,0 +1,450 @@
+==============================================================================
+MoRa Stats engine, version 0.1.0
+Every number below is computed. Every sentence is a template filled from
+those numbers. There is no model anywhere in this path.
+==============================================================================
+
+### Student's sleep data, the dataset the t-test was published on
+------------------------------------------------------------------------------
+WELCH'S T-TEST  ·  extra_sleep × drug  ·  design: experimental
+------------------------------------------------------------------------------
+
+RESULT
+  t(17.78) = -1.86
+  p = .079
+  Hedges' g = -.80, 95% CI [-1.86, .01]
+  mean difference (hours) = -1.58
+  n = 20
+
+  drug 1: n = 10, M = 0.75, SD = 1.79, Mdn = 0.35
+  drug 2: n = 10, M = 2.33, SD = 2.00, Mdn = 1.75
+
+APA
+  drug 1: M = 0.75, SD = 1.79, n = 10; drug 2: M = 2.33, SD = 2.00, n = 10. A
+  comparison using Welch's t-test gave t(17.78) = -1.86, p = .079, g = -.80,
+  95% CI [-1.86, .01].
+
+INTERPRETATION
+  Drug 1 scored 1.58 hours lower than drug 2 on average (0.75 against 2.33),
+  and the interval still runs from 0.21 hours the other way to 3.37 hours
+  lower, so the direction itself is unsettled. Measured against how much
+  people vary, that comes to Hedges' g = -.80, 95% CI [-1.86, .01], a medium
+  difference by the usual benchmarks. This project is declared experimental
+  with random assignment, so within this sample the gap can be read as an
+  effect of drug, because assignment is what made the groups comparable to
+  begin with. At p = .079 this does not clear the 0.05 line, and that is not
+  evidence that there is no effect, because at n = 20 the smallest effect this
+  design could catch 80 times out of 100 was a Hedges' g of 1.32 (about 2.52
+  hours), so anything smaller than that would most likely have slipped past.
+
+CHECKS
+  ! The smallest group has 10 cases (drug 1), below the 20 that the interval
+  around this effect assumes to behave well.
+    What to do: Read the confidence interval as the result rather than the p
+    value, and collect more cases in this group before treating the estimate
+    as settled.
+  ! One case (row 6) is carrying more of this result than the rest. Dropping
+  it alone moves the effect from -0.80 to -1.01, a shift of 0.21.
+    What to do: Check that case for a data entry error or a genuine reason to
+    exclude it, and report the analysis both with and without it. Do not drop
+    it only because it is inconvenient.
+
+WORDS USED HERE
+  p value: How often numbers at least this extreme would turn up if there were
+  nothing to find. A small p makes an accident a poor explanation for the
+  pattern. It is not the chance that you are wrong.
+  confidence interval: The range of values that fit the data reasonably well.
+  Read the whole range rather than the single number in front of it, because
+  the range is what tells you how much is still unsettled.
+  effect size: How big the difference or the association is, put on a scale
+  that does not depend on how many people you measured. A p value tells you
+  whether something is there, and an effect size tells you how much of it
+  there is.
+  power: The chance that a study of this size would notice an effect of a
+  given size if that effect were real. Low power is why a small study can miss
+  something that is genuinely there.
+
+
+### A null result at n = 36, where SPSS would stop at 'not significant'
+------------------------------------------------------------------------------
+WELCH'S T-TEST  ·  wellbeing × condition  ·  design: experimental
+------------------------------------------------------------------------------
+
+RESULT
+  t(26.99) = 1.51
+  p = .144
+  Hedges' g = .49, 95% CI [-.13, 1.40]
+  mean difference (points) = 5.33
+  n = 36
+
+  programme: n = 18, M = 53.44, SD = 7.44, Mdn = 53.16
+  waitlist: n = 18, M = 48.11, SD = 13.06, Mdn = 46.83
+
+APA
+  programme: M = 53.44, SD = 7.44, n = 18; waitlist: M = 48.11, SD = 13.06, n
+  = 18. A comparison using Welch's t-test gave t(26.99) = 1.51, p = .144, g =
+  .49, 95% CI [-.13, 1.40].
+
+INTERPRETATION
+  Programme scored 5.33 points higher than waitlist on average (53.44 against
+  48.11), and the interval still runs from 1.93 points the other way to 12.60
+  points higher, so the direction itself is unsettled. Measured against how
+  much people vary, that comes to Hedges' g = .49, 95% CI [-.13, 1.40], a
+  small difference by the usual benchmarks. This project is declared
+  experimental with random assignment, so within this sample the gap can be
+  read as an effect of condition, because assignment is what made the groups
+  comparable to begin with. At p = .144 this does not clear the 0.05 line, and
+  that is not evidence that there is no effect, because at n = 36 the smallest
+  effect this design could catch 80 times out of 100 was a Hedges' g of .96
+  (about 10.22 points), so anything smaller than that would most likely have
+  slipped past.
+
+CHECKS
+  ! The smallest group has 18 cases (programme), below the 20 that the
+  interval around this effect assumes to behave well.
+    What to do: Read the confidence interval as the result rather than the p
+    value, and collect more cases in this group before treating the estimate
+    as settled.
+  ! The largest group variance is 3.1 times the smallest, so the groups are
+  not equally spread.
+    What to do: Report the Welch version of this test, which corrects the
+    degrees of freedom for unequal variances and costs almost nothing when
+    variances are in fact equal.
+  · wellbeing in waitlist is skewed at 1.02 with kurtosis 2.75 at n = 18,
+  which is a mild departure from a normal shape, and at this sample size that
+  is enough to be worth checking.
+    What to do: Run the rank-based version of this test, which does not assume
+    a normal distribution, and report that one instead. The app has it
+    selected in the list of suitable tests.
+  ! One case (row 9) is carrying more of this result than the rest. Dropping
+  it alone moves the effect from 0.49 to 0.83, a shift of 0.33.
+    What to do: Check that case for a data entry error or a genuine reason to
+    exclude it, and report the analysis both with and without it. Do not drop
+    it only because it is inconvenient.
+
+WORDS USED HERE
+  p value: How often numbers at least this extreme would turn up if there were
+  nothing to find. A small p makes an accident a poor explanation for the
+  pattern. It is not the chance that you are wrong.
+  confidence interval: The range of values that fit the data reasonably well.
+  Read the whole range rather than the single number in front of it, because
+  the range is what tells you how much is still unsettled.
+  effect size: How big the difference or the association is, put on a scale
+  that does not depend on how many people you measured. A p value tells you
+  whether something is there, and an effect size tells you how much of it
+  there is.
+  power: The chance that a study of this size would notice an effect of a
+  given size if that effect were real. Low power is why a small study can miss
+  something that is genuinely there.
+
+
+### A significant result from a small design, where the estimate is inflated
+------------------------------------------------------------------------------
+WELCH'S T-TEST  ·  recall × method  ·  design: experimental
+------------------------------------------------------------------------------
+
+RESULT
+  t(18.47) = -2.53
+  p = .021
+  Hedges' g = -1.04, 95% CI [-2.02, -.33]
+  mean difference (items) = -9.12
+  n = 22
+
+  massed: n = 11, M = 47.75, SD = 9.58, Mdn = 49.83
+  spaced: n = 11, M = 56.87, SD = 7.13, Mdn = 56.66
+
+APA
+  massed: M = 47.75, SD = 9.58, n = 11; spaced: M = 56.87, SD = 7.13, n = 11.
+  A comparison using Welch's t-test gave t(18.47) = -2.53, p = .021, g =
+  -1.04, 95% CI [-2.02, -.33].
+
+INTERPRETATION
+  Massed scored 9.12 items lower than spaced on average (47.75 against 56.87),
+  and the gap is somewhere between 1.56 and 16.67 items at 95% confidence.
+  Measured against how much people vary, that comes to Hedges' g = -1.04, 95%
+  CI [-2.02, -.33], a large difference by the usual benchmarks. This project
+  is declared experimental with random assignment, so within this sample the
+  gap can be read as an effect of method, because assignment is what made the
+  groups comparable to begin with. At p = .021 the result clears the 0.05
+  line, and at n = 22 the design could catch a Hedges' g of 1.26 or larger 80
+  times out of 100 (about 10.61 items). Take care with the size of it. If the
+  true effect were the size estimated here, then among studies this small the
+  ones that reach significance overstate it by about 1.3 times on average, so
+  read -1.04 as the top of the plausible range rather than the best guess, and
+  lean on the interval instead.
+
+CHECKS
+  ! The smallest group has 11 cases (massed), below the 20 that the interval
+  around this effect assumes to behave well.
+    What to do: Read the confidence interval as the result rather than the p
+    value, and collect more cases in this group before treating the estimate
+    as settled.
+  ! One case (row 3) is carrying more of this result than the rest. Dropping
+  it alone moves the effect from -1.04 to -1.20, a shift of 0.17.
+    What to do: Check that case for a data entry error or a genuine reason to
+    exclude it, and report the analysis both with and without it. Do not drop
+    it only because it is inconvenient.
+
+MULTIPLE COMPARISONS
+  This is inferential test 3 in this project (3 in this session). Running 3
+  tests at alpha = 0.05 gives about a 14% chance that at least one of them is
+  a false positive even if nothing is going on. Adjusted for the whole set,
+  this result has a Holm p of .062 and a Benjamini-Hochberg p of .062. Decide
+  which of these tests belong to one family and apply Holm for strict control
+  or Benjamini-Hochberg for a tolerable false discovery rate.
+
+WORDS USED HERE
+  p value: How often numbers at least this extreme would turn up if there were
+  nothing to find. A small p makes an accident a poor explanation for the
+  pattern. It is not the chance that you are wrong.
+  confidence interval: The range of values that fit the data reasonably well.
+  Read the whole range rather than the single number in front of it, because
+  the range is what tells you how much is still unsettled.
+  effect size: How big the difference or the association is, put on a scale
+  that does not depend on how many people you measured. A p value tells you
+  whether something is there, and an effect size tells you how much of it
+  there is.
+  power: The chance that a study of this size would notice an effect of a
+  given size if that effect were real. Low power is why a small study can miss
+  something that is genuinely there.
+
+
+### A seven point satisfaction scale with a ceiling, in a correlational project
+------------------------------------------------------------------------------
+MANN-WHITNEY U TEST  ·  satisfaction × plan  ·  design: correlational
+------------------------------------------------------------------------------
+
+RESULT
+  U = 2256.00
+  p = .012
+  rank-biserial r = .25, 95% CI [.05, .43]
+  median difference (scale points) = 0.00
+  n = 120
+
+  premium: n = 60, M = 6.20, SD = 0.86, Mdn = 6.00
+  standard: n = 60, M = 5.60, SD = 1.29, Mdn = 6.00
+
+APA
+  premium: M = 6.20, SD = 0.86, n = 60; standard: M = 5.60, SD = 1.29, n = 60.
+  A Mann-Whitney U test gave U = 2256.0, p = .012, rrb = .25, 95% CI [.05,
+  .43].
+
+INTERPRETATION
+  A case picked at random from premium scores higher than one picked from
+  standard about 63% of the time, and the medians sit 0.00 scale points apart
+  (6.00 against 6.00). As a standardised figure that is rank-biserial r = .25,
+  95% CI [.05, .43], a small separation between the two distributions. This
+  project is declared correlational, so the finding is that plan is associated
+  with satisfaction, and nothing here separates that association from the
+  other ways the cases differ. At p = .012 the result clears the 0.05 line,
+  and at n = 120 the design could catch a rank-biserial r of .29 or larger 80
+  times out of 100.
+
+CHECKS
+  ! 45% of satisfaction scores sit at the scale maximum of 7 in premium, so
+  the measure cannot show anyone doing better.
+    What to do: A ceiling effect compresses real differences toward zero, so
+    treat this effect as a lower bound. Use a harder version of the measure,
+    or analyse the ranks rather than the scores.
+  ! 33% of satisfaction scores sit at the scale maximum of 7 in standard, so
+  the measure cannot show anyone doing better.
+    What to do: A ceiling effect compresses real differences toward zero, so
+    treat this effect as a lower bound. Use a harder version of the measure,
+    or analyse the ranks rather than the scores.
+
+MULTIPLE COMPARISONS
+  This is inferential test 4 in this project (4 in this session). Running 4
+  tests at alpha = 0.05 gives about a 19% chance that at least one of them is
+  a false positive even if nothing is going on. Adjusted for the whole set,
+  this result has a Holm p of .049 and a Benjamini-Hochberg p of .041. Decide
+  which of these tests belong to one family and apply Holm for strict control
+  or Benjamini-Hochberg for a tolerable false discovery rate.
+
+WORDS USED HERE
+  p value: How often numbers at least this extreme would turn up if there were
+  nothing to find. A small p makes an accident a poor explanation for the
+  pattern. It is not the chance that you are wrong.
+  confidence interval: The range of values that fit the data reasonably well.
+  Read the whole range rather than the single number in front of it, because
+  the range is what tells you how much is still unsettled.
+  effect size: How big the difference or the association is, put on a scale
+  that does not depend on how many people you measured. A p value tells you
+  whether something is there, and an effect size tells you how much of it
+  there is.
+  power: The chance that a study of this size would notice an effect of a
+  given size if that effect were real. Low power is why a small study can miss
+  something that is genuinely there.
+
+
+### Three sites compared on one outcome
+------------------------------------------------------------------------------
+ONE-WAY ANOVA  ·  turnaround × site  ·  design: quasi-experimental
+------------------------------------------------------------------------------
+
+RESULT
+  F(2, 117) = 14.90
+  p < .001
+  omega squared = .19, 95% CI [.08, .32]
+  spread between the highest and lowest group mean (minutes) = 9.00
+  n = 120
+
+  east: n = 40, M = 56.10, SD = 7.69, Mdn = 54.95
+  north: n = 40, M = 47.10, SD = 7.51, Mdn = 46.85
+  south: n = 40, M = 54.87, SD = 8.73, Mdn = 55.05
+
+APA
+  east: M = 56.10, SD = 7.69, n = 40; north: M = 47.10, SD = 7.51, n = 40;
+  south: M = 54.87, SD = 8.73, n = 40. A one-way analysis of variance gave
+  F(2, 117) = 14.90, p < .001, omega2 = .19, 95% CI [.08, .32].
+
+INTERPRETATION
+  The group means run east at 56.10, north at 47.10 and south at 54.87
+  minutes, so east sits 9.00 minutes above north. Group membership accounts
+  for 19% of the variation in turnaround (omega squared = .19, 95% CI [.08,
+  .32]), a large share. This project is declared quasi-experimental, so the
+  groups were compared as they already existed, and the gap carries whatever
+  else distinguishes them alongside any effect of site itself. At p < .001 the
+  result clears the 0.05 line, and at n = 120 the design could catch an omega
+  squared of .08 or larger 80 times out of 100.
+
+MULTIPLE COMPARISONS
+  This is inferential test 5 in this project (5 in this session). Running 5
+  tests at alpha = 0.05 gives about a 23% chance that at least one of them is
+  a false positive even if nothing is going on. Adjusted for the whole set,
+  this result has a Holm p of < .001 and a Benjamini-Hochberg p of < .001.
+  Decide which of these tests belong to one family and apply Holm for strict
+  control or Benjamini-Hochberg for a tolerable false discovery rate.
+
+WORDS USED HERE
+  p value: How often numbers at least this extreme would turn up if there were
+  nothing to find. A small p makes an accident a poor explanation for the
+  pattern. It is not the chance that you are wrong.
+  confidence interval: The range of values that fit the data reasonably well.
+  Read the whole range rather than the single number in front of it, because
+  the range is what tells you how much is still unsettled.
+  effect size: How big the difference or the association is, put on a scale
+  that does not depend on how many people you measured. A p value tells you
+  whether something is there, and an effect size tells you how much of it
+  there is.
+  power: The chance that a study of this size would notice an effect of a
+  given size if that effect were real. Low power is why a small study can miss
+  something that is genuinely there.
+
+
+### Two continuous variables in a correlational project
+------------------------------------------------------------------------------
+PEARSON CORRELATION  ·  study_hours × grade  ·  design: correlational
+------------------------------------------------------------------------------
+
+RESULT
+  t(88) = 10.81
+  p < .001
+  Pearson's r = .76, 95% CI [.65, .83]
+  slope (marks of grade per unit of study hours) = 0.78
+  n = 90
+
+  study hours: n = 90, M = 9.70, SD = 2.19, Mdn = 9.80
+  grade: n = 90, M = 10.89, SD = 2.26, Mdn = 10.76
+
+APA
+  A Pearson correlation between study hours and grade was r = .76, 95% CI
+  [.65, .83], p < .001, n = 90.
+
+INTERPRETATION
+  Each one-point step up in study hours goes with grade that rises by 0.78
+  marks on average, across 90 cases. The standardised figure is Pearson's r =
+  .76, 95% CI [.65, .83], a large association, and the two variables move
+  together enough to share 57% of their variation. This project is declared
+  correlational, so the finding is that study hours is associated with grade,
+  and nothing here separates that association from the other ways the cases
+  differ. At p < .001 the result clears the 0.05 line, and at n = 90 the
+  design could catch a r of .29 or larger 80 times out of 100.
+
+MULTIPLE COMPARISONS
+  This is inferential test 6 in this project (6 in this session). Running 6
+  tests at alpha = 0.05 gives about a 26% chance that at least one of them is
+  a false positive even if nothing is going on. Adjusted for the whole set,
+  this result has a Holm p of < .001 and a Benjamini-Hochberg p of < .001.
+  Decide which of these tests belong to one family and apply Holm for strict
+  control or Benjamini-Hochberg for a tolerable false discovery rate.
+
+WORDS USED HERE
+  p value: How often numbers at least this extreme would turn up if there were
+  nothing to find. A small p makes an accident a poor explanation for the
+  pattern. It is not the chance that you are wrong.
+  confidence interval: The range of values that fit the data reasonably well.
+  Read the whole range rather than the single number in front of it, because
+  the range is what tells you how much is still unsettled.
+  effect size: How big the difference or the association is, put on a scale
+  that does not depend on how many people you measured. A p value tells you
+  whether something is there, and an effect size tells you how much of it
+  there is.
+  power: The chance that a study of this size would notice an effect of a
+  given size if that effect were real. Low power is why a small study can miss
+  something that is genuinely there.
+
+
+### A contingency table with cells too thin for chi-square
+------------------------------------------------------------------------------
+CHI-SQUARE TEST OF INDEPENDENCE  ·  attended × outcome  ·  design: correlational
+------------------------------------------------------------------------------
+
+RESULT
+  chi2(1) = 2.67
+  p = .102
+  Cramer's V = .29, 95% CI [.00, .64]
+  percentage points, no / failed above what independence would give = 14.73
+  n = 32
+
+  no: n = 14
+  yes: n = 18
+
+APA
+  A chi-square test of independence between attended and outcome gave chi2(1,
+  N = 32) = 2.67, p = .102, V = .29, 95% CI [.00, .64].
+
+INTERPRETATION
+  The widest gap in the table is no / failed, which turns up in 43% of those
+  cases against the 28% that independence would give, a gap of 14.7 percentage
+  points. Taking the table as a whole, Cramer's V = .29, 95% CI [.00, .64], a
+  small association between attended and outcome. This project is declared
+  correlational, so the finding is that attended is associated with outcome,
+  and nothing here separates that association from the other ways the cases
+  differ. At p = .102 this does not clear the 0.05 line, and that is not
+  evidence that there is no effect, because at n = 32 the smallest effect this
+  design could catch 80 times out of 100 was a Cramer's V of .50, so anything
+  smaller than that would most likely have slipped past.
+
+CHECKS
+  !! 1 of 4 cells has an expected count below 5 (the smallest is 3.94), which
+  the chi-square approximation does not handle.
+    What to do: Use Fisher's exact test for a two by two table, or combine
+    categories that belong together on substantive grounds before rerunning.
+
+MULTIPLE COMPARISONS
+  This is inferential test 7 in this project (7 in this session). Running 7
+  tests at alpha = 0.05 gives about a 30% chance that at least one of them is
+  a false positive even if nothing is going on. Adjusted for the whole set,
+  this result has a Holm p of .238 and a Benjamini-Hochberg p of .119. Decide
+  which of these tests belong to one family and apply Holm for strict control
+  or Benjamini-Hochberg for a tolerable false discovery rate.
+
+WORDS USED HERE
+  p value: How often numbers at least this extreme would turn up if there were
+  nothing to find. A small p makes an accident a poor explanation for the
+  pattern. It is not the chance that you are wrong.
+  confidence interval: The range of values that fit the data reasonably well.
+  Read the whole range rather than the single number in front of it, because
+  the range is what tells you how much is still unsettled.
+  effect size: How big the difference or the association is, put on a scale
+  that does not depend on how many people you measured. A p value tells you
+  whether something is there, and an effect size tells you how much of it
+  there is.
+  power: The chance that a study of this size would notice an effect of a
+  given size if that effect were real. Low power is why a small study can miss
+  something that is genuinely there.
+
+==============================================================================
+Tests recorded this session: 7. Family-wise false positive rate at alpha = 0.05: 30%.
+This engine reads the statistic only. Whether the finding matters, whether it is new, and whether it supports your theory are judgements for you and your reviewers, and no rule in here can make them.
+==============================================================================
