@@ -1,0 +1,73 @@
+student_id,arm,faculty,prior_score,post_score,study_hours,confidence
+1001,tutorial,business,53.3,76.6,10.9,6
+1002,tutorial,science,64.6,66.7,7.5,4
+1003,tutorial,business,41.1,55.9,6.8,5
+1004,tutorial,science,77.4,87.2,7.3,4
+1005,tutorial,science,69.0,74.3,5.3,6
+1006,tutorial,business,58.8,,7.4,4
+1007,tutorial,business,58.6,74.6,10.0,6
+1008,tutorial,business,65.3,70.4,8.2,5
+1009,tutorial,business,59.1,76.9,13.1,5
+1010,tutorial,arts,59.5,60.5,8.6,7
+1011,tutorial,science,69.9,76.8,8.0,6
+1012,tutorial,business,67.7,77.6,8.5,6
+1013,tutorial,science,61.3,70.5,7.1,5
+1014,tutorial,business,61.1,58.2,7.9,3
+1015,tutorial,science,63.8,65.2,8.6,6
+1016,tutorial,business,55.2,60.2,14.7,7
+1017,tutorial,science,57.6,57.6,13.6,5
+1018,tutorial,science,68.0,79.5,15.3,7
+1019,tutorial,business,60.6,71.4,17.0,5
+1020,tutorial,arts,46.9,38.6,4.0,1
+1021,tutorial,science,56.7,49.6,9.8,3
+1022,tutorial,science,69.2,66.0,10.7,3
+1023,tutorial,business,59.4,66.7,11.6,4
+1024,tutorial,business,60.4,82.0,19.0,6
+1025,tutorial,business,69.1,72.6,17.2,4
+1026,tutorial,business,82.1,90.4,13.3,6
+1027,tutorial,business,54.2,52.6,10.7,5
+1028,tutorial,science,76.8,75.4,5.4,4
+1029,tutorial,business,48.5,40.2,4.3,3
+1030,tutorial,science,63.9,70.1,12.1,5
+1031,tutorial,business,49.1,62.6,11.0,6
+1032,tutorial,science,76.9,,5.6,4
+1033,tutorial,business,71.2,88.0,11.4,5
+1034,tutorial,arts,74.5,82.4,11.4,5
+1035,tutorial,arts,52.3,58.4,12.8,5
+1036,tutorial,science,69.5,79.8,10.4,5
+1037,self study,business,56.3,65.9,9.8,4
+1038,self study,business,57.0,62.8,10.0,4
+1039,self study,science,67.6,76.7,11.0,4
+1040,self study,science,71.6,67.3,4.8,5
+1041,self study,business,64.2,71.0,12.6,4
+1042,self study,science,55.1,64.5,17.1,7
+1043,self study,business,52.9,59.7,12.6,4
+1044,self study,science,77.9,77.5,4.6,6
+1045,self study,science,68.5,41.5,4.8,4
+1046,self study,arts,69.9,75.2,4.6,4
+1047,self study,business,86.0,88.0,3.8,4
+1048,self study,business,53.0,51.4,10.7,4
+1049,self study,business,90.2,97.1,10.4,7
+1050,self study,business,96.7,99.8,7.5,5
+1051,self study,arts,79.8,82.4,3.2,4
+1052,self study,arts,71.1,61.1,3.5,1
+1053,self study,science,54.7,44.9,7.8,3
+1054,self study,business,72.9,76.8,9.7,6
+1055,self study,business,57.1,58.8,11.3,5
+1056,self study,arts,61.8,63.9,13.9,5
+1057,self study,business,58.8,61.2,8.4,4
+1058,self study,business,65.1,69.3,11.1,5
+1059,self study,science,76.2,77.5,8.8,6
+1060,self study,business,55.9,58.2,7.9,4
+1061,self study,business,51.2,54.2,8.8,1
+1062,self study,business,51.0,59.0,13.2,6
+1063,self study,science,51.3,48.6,5.5,3
+1064,self study,science,46.3,53.3,13.6,6
+1065,self study,arts,52.0,57.8,14.4,7
+1066,self study,science,76.2,78.1,9.4,6
+1067,self study,business,55.5,53.0,9.4,5
+1068,self study,business,64.8,68.7,5.4,7
+1069,self study,science,48.6,56.2,17.3,3
+1070,self study,business,63.9,56.9,10.8,5
+1071,self study,science,42.9,44.4,9.8,4
+1072,self study,science,54.3,55.9,9.4,3

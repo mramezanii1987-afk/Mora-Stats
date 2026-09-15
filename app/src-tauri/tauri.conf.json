@@ -1,0 +1,53 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "MoRa Stats",
+  "version": "0.1.0",
+  "identifier": "app.morastats.desktop",
+  "build": {
+    "devUrl": "http://localhost:5173",
+    "frontendDist": "../dist",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "MoRa Stats",
+        "width": 1440,
+        "height": 900,
+        "minWidth": 1100,
+        "minHeight": 680
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis", "msi", "dmg"],
+    "publisher": "MoRa Stats",
+    "copyright": "",
+    "category": "Education",
+    "shortDescription": "Statistics that tell you what your result means",
+    "longDescription": "A statistics application for researchers and students. It runs the analysis, writes the APA sentence, and explains in plain words what the result does and does not support. All computation happens on this machine.",
+    "externalBin": ["binaries/mora-engine"],
+    "resources": ["../sample/*"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser",
+        "languages": ["English"],
+        "displayLanguageSelector": false
+      }
+    },
+    "macOS": {
+      "minimumSystemVersion": "11.0"
+    }
+  }
+}
